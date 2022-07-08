@@ -39,6 +39,26 @@ void Sum_odd_array(int [] array) // создание метода  "Sum_odd_arra
     Console.Write(sum);
 }
 
+void dif_array(int [] array) // создание метода  "dif_array" для вывода разницы между максимальным и минимальным значением массива
+{
+    int max = array[0];
+    int min = array[0];
+    for (int i = 0; i < array.Length; i ++)
+    {
+        
+        if (max < array[i])
+        {
+            max = array[i];
+        }
+        else if (min > array[i])
+        {
+            min = array[i];
+        }        
+        else {}
+    }
+    Console.Write(max - min);
+}
+
 // Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
@@ -64,19 +84,32 @@ void Sum_odd_array(int [] array) // создание метода  "Sum_odd_arra
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-Console.WriteLine("Введите количество элементов в массиве"); 
-int a = Convert.ToInt32(Console.ReadLine()); 
+// Console.WriteLine("Введите количество элементов в массиве"); 
+// int a = Convert.ToInt32(Console.ReadLine()); 
 
-Console.WriteLine("ведите первое число случайно генирируемых числел"); 
-int beg_array = Convert.ToInt32(Console.ReadLine()); 
+// Console.WriteLine("ведите первое число случайно генирируемых числел"); 
+// int beg_array = Convert.ToInt32(Console.ReadLine()); 
 
-Console.WriteLine("Введите последнее число случайно генирируемых числел"); 
-int end_array = Convert.ToInt32(Console.ReadLine()); 
+// Console.WriteLine("Введите последнее число случайно генирируемых числел"); 
+// int end_array = Convert.ToInt32(Console.ReadLine()); 
 
-int [] array_1 = Generate_random_array (a, beg_array, end_array);
-Show_array(array_1);
-Sum_odd_array(array_1);
+// int [] array_1 = Generate_random_array (a, beg_array, end_array);
+// Show_array(array_1);
+// Sum_odd_array(array_1);
 
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
+
+Console.WriteLine("Введите количество элементов в массиве"); 
+int number_1 = Convert.ToInt32(Console.ReadLine()); 
+
+Console.WriteLine("ведите первое число случайно генирируемых числел"); 
+int min_array = Convert.ToInt32(Console.ReadLine()); 
+
+Console.WriteLine("Введите последнее число случайно генирируемых числел"); 
+int max_array = Convert.ToInt32(Console.ReadLine()); 
+
+int [] array_2 = Generate_random_array (number_1, min_array, max_array);
+Show_array(array_2);
+dif_array(array_2);
